@@ -4,12 +4,7 @@ exec { "apt-get update":
     command => "/usr/bin/apt-get update",
 }
 
-package { 'makepasswd':
-  ensure => '1.10-9',
-  require  => Exec['apt-get update'],
-}
-
-package { 'git':
-  ensure => present,
+package { 'siege':
+  ensure => '3.0.5-1',
   require  => Exec['apt-get update'],
 }
